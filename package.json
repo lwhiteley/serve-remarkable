@@ -1,0 +1,39 @@
+{
+  "name": "serve-remarkable",
+  "version": "0.0.1",
+  "description": "server for markdown docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwhiteley/serve-remarkable.git"
+  },
+  "keywords": [
+    "markdown",
+    "remarkable"
+  ],
+  "author": "Layton Whiteley",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lwhiteley/serve-remarkable/issues"
+  },
+  "homepage": "https://github.com/lwhiteley/serve-remarkable#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "bootstrap": "^3.3.7",
+    "feathers": "^2.2.0",
+    "gfm-code-blocks": "^1.0.0",
+    "globule": "^1.2.0",
+    "highlight.js": "^9.12.0",
+    "html-bust": "^0.1.1",
+    "less": "^2.7.2",
+    "lodash": "^4.17.4",
+    "remarkable": "^1.7.1",
+    "remarkable-meta": "^1.0.1",
+    "replace-ext": "^1.0.0",
+    "write": "^1.0.3",
+    "yamljs": "^0.3.0"
+  }
+}
