@@ -30,6 +30,7 @@
     "html-bust": "^0.1.1",
     "less": "^2.7.2",
     "lodash": "^4.17.4",
+    "prismjs": "^1.7.0",
     "remarkable": "^1.7.1",
     "remarkable-meta": "^1.0.1",
     "replace-ext": "^1.0.0",

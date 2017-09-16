@@ -37,24 +37,33 @@ const createGroup = (markdown) => {
 const renderCodeGroup = (md, content, block) => {
     // console.log(content)
     const parsedCodeBlocks = codeBlocks(content);
-    parsedCodeBlocks.forEach((item, i) => {
+    var allSections = parsedCodeBlocks.map((item, i) => {
         //TODO: remove descriptor from langauge name
         //TODO: use descriptor or lang as title
-        const render = md.render(item.block);
         const descriptor = item.lang;
-        const active = 1 === 0 ? ' active' : '';
+        const render = md.render(item.block);
+        const active = i === 0 ? ' active' : '';
         const lang = `<!-- lang section -->
-        <div role="tabpanel" class="tab-pane lang-section${active}" id="home"">
-            <div class="lang-title">${descriptor}</div>
-            <div class="code-view">${render}</div>
+        <div role="tabpanel" class="tab-pane lang-section${active}" id="${descriptor.replace('::', '-')}-${i}">
+            ${render}
         </div>  <!-- lang section end -->`;
         item.rendered = lang;
+        return item.rendered;
     });
-    // console.log(parsedCodeBlocks)
-    const allSections = md.render(content);
+    // console.log(allSections.join(''))
+    // const allSections = md.render(content);
     const group = `<!-- codegroup -->
     <div class="codegroup">
-    ${allSections}
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#js-0" aria-controls="js-0" role="tab" data-toggle="tab">js</a>
+            </li>
+            <li role="presentation"><a href="#swift-2" aria-controls="swift-2" role="tab" data-toggle="tab">swift-2</a></li>
+            <li role="presentation"><a href="#js-sdk-1" aria-controls="js::sdk-1" role="tab" data-toggle="tab">js::sdk-1</a></li>
+        </ul>
+        <div class="tab-content">
+            ${allSections.join('')}
+        </div>
     </div>  <!-- codegroup end -->`;
     return group;
 };

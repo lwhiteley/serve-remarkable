@@ -7,9 +7,14 @@ const _ = require('lodash');
 const replaceExt = require('replace-ext');
 const writeFile = require('write');
 const hljs = require('highlight.js');
+const Prism = require('prismjs');
+// const hljsSwift = require('highlight.js/src/languages/swift');
 const yaml = require('yamljs')
+const bust = require('html-bust');
 
 const codeGroup = require('./plugins/codegroup.plugin')
+
+// hljs.registerLanguage('swift');
 
 const docFolder = 'source/docs'
 const docPath = `./${docFolder}`;
@@ -23,7 +28,7 @@ function renderContent (content, fileMeta, options) {
         highlight: function (str, lang) {
           if (lang && hljs.getLanguage(lang)) {
             try {
-              return hljs.highlight(lang, str).value;
+              return Prism.highlight(lang, str);
             } catch (err) {}
           }
       
