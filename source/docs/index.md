@@ -23,10 +23,9 @@ const htmlTemplate = fs.readFileSync('source/doc.template.html', 'utf8')
 ```
 
 ```swift
-const docFolder = 'source/docs'
-const docPath = `./${docFolder}`;
-const fileGlob = '**/*.md'
-const publicFolder = 'public';
-const htmlTemplate = fs.readFileSync('source/doc.template.html', 'utf8')
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  sampleApp = SampleApplication()
+  return true
+}
 ```
 [/codegroup]
